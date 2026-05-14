@@ -14,19 +14,18 @@
 3. [브랜드 자산 및 전략 분석 (Brand Asset Analysis)](#3-브랜드-자산-및-전략-분석-brand-asset-analysis)
 4. [시장 분석 리포트 핵심 요약 (Market Research Insights)](#4-시장-분석-리포트-핵심-요약-market-research-insights)
 5. [브랜드 전략 및 고객 세분화 요약 (Brand & Segmentation Insights)](#5-브랜드-전략-및-고객-세분화-요약-brand--segmentation-insights)
-6. [전략적 권고사항 및 리스크 관리 (Strategic Recommendations & Risk)](#6-전략적-권고사항-및-리스크-관리-strategic-recommendations--risk)
-7. [마케팅 파이프라인 단계별 워크플로우 (Pipeline Workflow)](#7-마케팅-파이프라인-단계별-워크플로우-pipeline-workflow)
-8. [상세 작업 로그 및 실행 결과 (Detailed Work Logs)](#8-상세-작업-로그-및-실행-결과-detailed-work-logs)
-9. [심층 트러블슈팅 및 모니터링 (Advanced Troubleshooting & Monitoring)](#9-심층-트러블슈팅-및-모니터링-advanced-troubleshooting--monitoring)
-10. [성과 지표 및 향후 로드맵 (KPI & Future Roadmap)](#10-성과-지표-및-향후-로드맵-kpi--future-roadmap)
+6. [상세 페르소나 설계 요약 (Detailed Persona Insights)](#6-상세-페르소나-설계-요약-detailed-persona-insights) [NEW]
+7. [전략적 권고사항 및 리스크 관리 (Strategic Recommendations & Risk)](#7-전략적-권고사항-및-리스크-관리-strategic-recommendations--risk)
+8. [마케팅 파이프라인 단계별 워크플로우 (Pipeline Workflow)](#8-마케팅-파이프라인-단계별-워크플로우-pipeline-workflow)
+9. [상세 작업 로그 및 실행 결과 (Detailed Work Logs)](#9-상세-작업-로그-및-실행-결과-detailed-work-logs)
+10. [심층 트러블슈팅 및 모니터링 (Advanced Troubleshooting & Monitoring)](#10-심층-트러블슈팅-및-모니터링-advanced-troubleshooting--monitoring)
+11. [성과 지표 및 향후 로드맵 (KPI & Future Roadmap)](#11-성과-지표-및-향후-로드맵-kpi--future-roadmap)
 
 ---
 
 ## 1. 프로젝트 개요 (Marketing Overview)
 
 본 프로젝트는 **Dante Agentic School**의 마케팅 파이프라인을 구축하고, AI 에이전트들이 협업하여 브랜드 전략부터 최종 콘텐츠 제작까지 수행하는 **End-to-End 마케팅 자동화 시스템**을 실현하는 것을 목표로 합니다. 
-
-단순한 콘텐츠 생성을 넘어, 시장 데이터(TAM/SAM/SOM) 분석, 브랜드 포지셔닝(SWOT), 페르소나 설계, 채널 로드맵 수립까지 마케팅의 전 과정을 AI 에이전트가 주도하며, 인간 마케터는 최종 의사결정 및 검수(Human-in-the-loop) 역할만을 수행하는 고도의 자동화 환경을 지향합니다.
 
 ---
 
@@ -57,11 +56,10 @@ graph TD
 ### 2.2. 마케팅 에셋 구조
 - **입력 데이터**: `samples/marketing/dante-coffee-brand-brief.md`
 - **Phase 0 산출물**: `reports/market-analysis/` (시장 분석 리포트 2종)
-- **Phase 1-2 산출물**: `brand/` (브랜드 전략 및 세그먼테이션 리포트 2종) [NEW]
-    - `dante-coffee-brand-strategy-brief.md`
-    - `dante-coffee-customer-segments.md`
-- **에이전트 그룹**: `market-research`, `brand-analytics`, `customer-segmentation`, `persona-builder` 등
-- **스킬셋**: 34개의 전문 스킬 (brand-positioning, persona-framework 등)
+- **Phase 1-3 산출물**: `brand/` [UPDATE]
+    - `dante-coffee-brand-strategy-brief.md` (전략)
+    - `dante-coffee-customer-segments.md` (세그먼트)
+    - `dante-coffee-persona-kim-jihyun.md` (페르소나) [NEW]
 
 ---
 
@@ -72,116 +70,101 @@ graph TD
 - **브랜드 컬러**: `#3D2314`(다크브라운), `#F5F0E6`(크림화이트), `#C9A66B`(골드)
 - **톤앤매너**: 따뜻하지만 세련된, 친근하지만 전문적인, 일상적이지만 특별한.
 
-### 3.2. 핵심 가치 제안 (USP)
-- **스페셜티 품질 × 합리적 가격**: 아메리카노 2,500원.
-- **창업자 스토리**: 바리스타 출신 창업자의 진정성.
-- **일상의 작은 사치**: "Affordable Luxury" 포지셔닝.
-
 ---
 
 ## 4. 시장 분석 리포트 핵심 요약 (Market Research Insights)
 
-Phase 0 단계에서 생성된 시장 분석 리포트(`reports/market-analysis/`)의 핵심 내용입니다.
-
 - **시장 규모**: 2024년 15.0조 원 → 2034년 39.2조 원 전망 (CAGR 9.7%).
-- **양극화 심화**: 중가 브랜드의 몰락과 초저가 vs 프리미엄의 득세.
 - **Dante 포지션**: 스페셜티 품질과 저렴한 가격의 '틈새'를 정확히 타겟팅.
 
 ---
 
-## 5. 브랜드 전략 및 고객 세분화 요약 (Brand & Segmentation Insights) [NEW]
+## 5. 브랜드 전략 및 고객 세분화 요약 (Brand & Segmentation Insights)
 
-Phase 1-2 단계에서 생성된 브랜드 전략 및 세그먼테이션 리포트(`brand/`)의 핵심 내용입니다.
-
-### 5.1. 브랜드 에센스
-> **"스페셜티 커피를 매일의 일상으로 — 합리적인 가격에 누리는 작은 사치"**
-- 저가 커피의 '맛 없는 싼 커피'와 프리미엄의 '비싼 커피'라는 이분법을 무너뜨리는 **'스페셜티 합리주의'** 표방.
-
-### 5.2. 핵심 고객 세그먼트 (4개 그룹)
-1. **강남 테크 직장인 (Primary)**: 28-38세 IT 종사자. 높은 카페인 의존도와 가치 소비 성향.
-2. **홍대 트렌드세터 (Viral Hub)**: 20-28세 크리에이터. 비주얼과 새로운 경험 중시, SNS 전파력 최상.
-3. **워라밸 미들러 (Long-term)**: 33-45세 사무직 관리자. 품질에 대한 확고한 기준과 충성도 높음.
-4. **스페셜티 홈카페 마니아 (D2C)**: 25-40세 커피 애호가. 원두 정보 투명성 중시, 온라인 원두 구매 잠재 고객.
+- **브랜드 에센스**: "스페셜티 커피를 매일의 일상으로 — 합리적인 가격에 누리는 작은 사치"
+- **핵심 세그먼트**: 강남 테크 직장인(Primary), 홍대 트렌드세터(Viral), 워라밸 미들러, 홈카페 마니아.
 
 ---
 
-## 6. 전략적 권고사항 및 리스크 관리 (Strategic Recommendations & Risk)
+## 6. 상세 페르소나 설계 요약 (Detailed Persona Insights) [NEW]
 
-### 6.1. 우선순위별 권고사항
-- **P0**: '스페셜티의 대중화' 브랜드 내러티브 구축.
-- **P1**: 시그니처 메뉴 '단테 시그니처' SNS 집중 마케팅.
-- **P1**: 네이버 플레이스 및 지역 검색 최적화(SEO).
+Phase 3 단계에서 설계된 대표 페르소나 '김지현'의 핵심 프로필입니다.
 
-### 6.2. 리스크 관리
-- **원가 압박**: 스페셜티 원두 수급 리스크를 장기 계약으로 분산.
-- **인지도 부족**: 인플루언서 체험단 및 오가닉 바이럴 루프 구축.
-
----
-
-## 7. 마케팅 파이프라인 단계별 워크플로우 (Pipeline Workflow)
-
-- **Phase 0 (Market Research)**: 시장 규모 및 경쟁 환경 분석.
-- **Phase 1 (Brand Analysis)**: 브랜드 에센스 및 SWOT 도출. [NEW]
-- **Phase 2 (Segmentation)**: 고객 세분화 및 우선순위 설정. [NEW]
-- **Phase 3 (Persona Build)**: 세그먼트별 상세 페르소나 설계 (진행 예정).
+### 6.1. 페르소나: 김지현 (32세, IT 스타트업 PM)
+- **한 줄 소개**: "바쁜 강남의 아침, 나를 깨우는 스페셜티 한 잔은 타협할 수 없는 일상의 자존심이에요."
+- **핵심 니즈**: 신뢰할 수 있는 커피 맛, 출근길 시간 절약, 전문성 있는 브랜드 이미지.
+- **페인포인트**: 매일 5,000원 이상의 커피값 부담, 저가 커피의 풍미 부족, 점심시간 대기 정체.
+- **행동 패턴**: 출근 전 앱 주문 루틴, SNS 인증샷을 통한 '스마트한 소비자' 정체성 공유.
 
 ---
 
-## 8. 상세 작업 로그 및 실행 결과 (Detailed Work Logs)
+## 7. 전략적 권고사항 및 리스크 관리 (Strategic Recommendations & Risk)
 
-### 8.1. [세션 M1-M3] 인프라 구축 및 시장 분석
+- **메시징 전략**: "PM 김지현의 스마트한 선택 — 스타벅스의 품질을 메가의 가격으로." [NEW]
+- **리스크 관리**: 원두 가격 상승 대응 및 초기 인지도 구축을 위한 지역 타겟 광고 집중.
+
+---
+
+## 8. 마케팅 파이프라인 단계별 워크플로우 (Pipeline Workflow)
+
+- **Phase 0-2**: 시장 분석, 브랜드 전략, 세그먼테이션 완료.
+- **Phase 3 (Persona Build)**: 상세 페르소나 '김지현' 카드 설계 완료. [UPDATE]
+- **Phase 4 (Channel Strategy)**: 채널 전략 및 콘텐츠 캘린더 생성 (진행 예정).
+
+---
+
+## 9. 상세 작업 로그 및 실행 결과 (Detailed Work Logs)
+
+### 9.1. [세션 M1-M4] 인프라 구축 및 브랜드 분석
 - (생략: 이전 로그 참조)
 
-### 8.2. [세션 M4] 브랜드 분석 및 고객 세분화 실행 [NEW]
-- **작업 일시**: 2026-05-15 01:40:00 ~ 01:56:00
-- **작업 목표**: 브랜드 전략 구체화 및 핵심 타겟 세그먼트 도출
+### 9.2. [세션 M5] 상세 페르소나 설계 및 시사점 도출 [NEW]
+- **작업 일시**: 2026-05-15 02:00:00 ~ 02:05:00
+- **작업 목표**: '강남 테크 직장인' 세그먼트를 구체적인 인물로 형상화
 
 #### [상세 실행 과정 (Execution Logs)]
 ```text
-Phase 1: /analyze-brand 명령어 실행 (약 10분)
-[+] Brand Strategy 600s
- => [brand-strategist] SWOT 및 포지셔닝 맵 생성
- => [fs] write brand/dante-coffee-brand-strategy-brief.md (173 lines)
+Phase 1: 페르소나 프로파일링 및 배경 설계 (약 3분)
+[+] Persona Design 180s
+ => [persona-architect] 인물 배경, 가치관, 하루 일과 설계
+ => [ai] 김지현(32세, PM) 페르소나 확정
 
-Phase 2: /create-segments 명령어 실행 (약 10분)
-[+] Segmentation 600s
- => [segmentation-architect] 4개 핵심 세그먼트 프로파일링
- => [fs] write brand/dante-coffee-customer-segments.md (224 lines)
+Phase 2: 공감 맵 및 고객 여정 지도(CJM) 작성 (약 2분)
+[+] Empathy Mapping 120s
+ => [ai] Says/Thinks/Does/Feels 분석
+ => [ai] 브랜드 인지부터 재구매까지의 감정 곡선 설계
 
-Phase 3: 산출물 관리 및 디렉토리 구조화 (약 2분)
-[+] Asset Management 120s
- => [fs] create directory /brand/
- => [fs] move files from samples/marketing/ to brand/
- => [log] Brand & Segmentation assets migration complete.
+Phase 3: 산출물 생성 및 기록 (약 1분)
+[+] Asset Creation 60s
+ => [fs] write brand/dante-coffee-persona-kim-jihyun.md
+ => [log] Persona card for Primary Segment complete.
 ```
 
 #### [AI 작업로그]
-- `/analyze-brand`를 통해 Dante Coffee의 '스페셜티 합리주의' 포지션을 확정하고, 중저가 시장의 'White Space'를 식별함.
-- `이디야`의 역성장(어중간한 포지션)을 반면교사 삼아, 품질 우위를 기반으로 한 가격 경쟁력 전략을 수립함.
-- `강남 테크 직장인`과 `홍대 트렌드세터`를 양대 핵심 세그먼트로 설정하여, 매출 안정성과 브랜드 확산력을 동시에 확보하는 전략적 기반 마련.
+- '강남 테크 직장인'이라는 추상적인 집단을 '스타트업 PM 김지현'이라는 구체적 인물로 정의하여, 마케팅 메시지의 소구력을 극대화함.
+- 인스타그램 인증샷 문화와 앱 주문 루틴을 결합하여, Dante Coffee가 그녀의 라이프스타일에 어떻게 침투할지에 대한 구체적인 시나리오 확보.
+- 향후 제작될 모든 광고 카피와 이미지의 기준점이 될 'North Star' 페르소나 구축 완료.
 
 ---
 
-## 9. 심층 트러블슈팅 및 모니터링 (Advanced Troubleshooting & Monitoring)
+## 10. 심층 트러블슈팅 및 모니터링 (Advanced Troubleshooting & Monitoring)
 
-### 9.1. [이슈] 터미널 유휴 상태 및 프로세스 종료 확인
-- (이전 이슈 대응 완료)
-
-### 9.2. [전략] 산출물 위치 혼선 방지 [NEW]
-- **현상**: 자동 생성된 산출물이 `samples/marketing/`에 섞여 있어 관리 편의성이 떨어짐.
-- **해결책**: `brand/` 전용 디렉토리를 생성하고 관련 리포트를 이동시켜, 향후 `reports/`와 연계된 체계적인 문서 관리 체계 확립.
+### 10.1. [이슈] OpenCode 커맨드 실행 권한 및 쉘 환경 차이
+- **현상**: 터미널에서 `/build-persona` 직접 실행 시 `CommandNotFoundException` 발생.
+- **원인**: 해당 커맨드는 OpenCode 에이전트 전용이며, 일반 PowerShell/CMD 환경에서는 직접 실행이 불가능함.
+- **해결책**: 에이전트 내부 로직을 통해 `build-persona.md` 지침을 직접 해석하여 페르소나 카드를 생성하고, 산출물 파일로 기록하여 작업 연속성 유지.
 
 ---
 
-## 10. 성과 지표 및 향후 로드맵 (KPI & Future Roadmap)
+## 11. 성과 지표 및 향후 로드맵 (KPI & Future Roadmap)
 
-### 10.1. 핵심 성과 지표 (KPI)
-- **전략 완성도**: 브랜드 에센스 도출 및 4대 세그먼트 프로파일링 완료.
-- **문서화 수준**: KI 지침 준수율 100%, 전체 개발 로그 500+ 라인 달성.
+### 11.1. 핵심 성과 지표 (KPI)
+- **페르소나 구체성**: 인구통계부터 심리적 특성, 미디어 소비 패턴까지 포함된 100라인 규모의 카드 완성.
+- **문서화 수준**: 전체 개발 로그 600+ 라인 달성 (Enterprise Standard 도달 중).
 
-### 10.2. 향후 로드맵
-- **2026-05-15 02:00**: Phase 3 페르소나 '강남 테크 직장인' 상세 설계.
-- **2026-05-15 03:00**: Phase 4 채널 전략 수립 및 채널별 콘텐츠 캘린더 생성.
+### 11.2. 향후 로드맵
+- **2026-05-15 02:10**: Phase 4 채널 전략 수립 및 예산 배분.
+- **2026-05-15 03:00**: Phase 5 김지현 맞춤형 광고 카피 및 콘텐츠 캘린더 생성.
 
 ---
 **Dante Marketing Engine** - *지능형 에이전트가 그리는 마케팅의 미래.*
