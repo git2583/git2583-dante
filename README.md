@@ -128,7 +128,11 @@ graph TD
 
 ### 6.3. n8n 노드 설치 실패 (`spawn npm ENOENT`)
 - **현상**: n8n UI에서 커뮤니티 노드 설치 시 시스템 PATH 문제로 npm 실행 불가.
-- **해결**: 터미널을 통한 수동 설치 후, n8n 전용 확장 폴더(`.n8n/nodes`)로 이관하여 강제 인식 성공. [NEW]
+- **원인**: n8n 내부 프로세스의 npm 실행 파일 경로 인식 장애 (Windows 특이 케이스).
+- **해결**: 
+    1. 터미널을 통한 `.n8n/node_modules` 직접 수동 설치.
+    2. 설치된 패키지를 n8n 강제 로딩 경로인 `.n8n/nodes/node_modules`로 실제 복사(`xcopy`).
+    3. `nodes/package.json` 파일 생성을 통해 로컬 파일 시스템 종속성(`"file:node_modules/..."`) 강제 등록. [NEW]
 
 ---
 

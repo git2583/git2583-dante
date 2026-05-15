@@ -180,17 +180,35 @@ Phase 3: 산출물 생성 및 기록 (약 1분)
 ---
 ---
 
-### 11.3. [세션 M8] n8n 커뮤니티 노드 설치 및 환경 최적화 [NEW]
+### 11.3. [세션 M8] n8n 커뮤니티 노드 설치 장애 복구 및 환경 최적화 (Deep Dive) [NEW]
 - **작업 일시**: 2026-05-15 15:37:00 ~ 16:30:00
-- **작업 목표**: n8n UI 내에서 발생하는 `spawn npm ENOENT` 오류 해결 및 에이전트 노드 활성화
-- **트러블슈팅 로그**:
-    1. **현상**: n8n 설정에서 `n8n-nodes-opencode-ai` 설치 시 500 에러 및 npm 실행 실패 로그 발생.
-    2. **원인 분석**: n8n 프로세스가 시스템 PATH에서 `npm`을 찾지 못하거나, Windows 환경의 `.cmd` 확장자 인식 문제로 판단.
-    3. **해결 과정**: 
-        - `.n8n/node_modules`에 직접 수동 설치 시도.
-        - n8n 전용 확장 경로인 `C:\Users\a\.n8n\nodes\node_modules`로 패키지 이관.
-        - `nodes/package.json` 수동 수정을 통해 종속성 강제 등록.
-    4. **최종 결과**: n8n 워크플로우 캔버스 내 `OpenCode` 노드 정상 노출 확인 및 세션 연동 성공.
+- **상황**: n8n 'Settings > Community Nodes'를 통한 `n8n-nodes-opencode-ai` 설치 시 500 에러와 함께 `spawn npm ENOENT` 발생.
+
+#### [Step 1: 로그 분석 및 원인 파악]
+- **실행 커맨드**: `powershell "Get-Content C:\Users\a\.n8n\n8nEventLog.log -Tail 50"`
+- **진단 결과**: n8n 프로세스가 내부적으로 `npm` 명령어를 호출할 때 시스템 PATH에서 `npm` 실행 파일을 찾지 못하는 환경 설정 이슈 확인.
+- **오류 로그**: `{"eventName":"n8n.audit.package.installed", "success":false, "failureReason":"Failed to execute npm command"}`
+
+#### [Step 2: 터미널 기반 수동 설치 시도]
+- **실행 커맨드**: `cd C:\Users\a\.n8n; npm install n8n-nodes-opencode-ai`
+- **결과**: `C:\Users\a\.n8n\node_modules`에 설치는 완료되었으나, n8n 재시작 후에도 노드 리스트에 나타나지 않음. (n8n이 일반 `node_modules`를 스캔하지 않는 버전으로 판단)
+
+#### [Step 3: n8n 전용 확장 경로(`nodes`) 구성 및 이관]
+- **전략**: n8n이 커뮤니티 노드를 위해 강제로 로드하는 `.n8n/nodes` 디렉토리를 활용하여 수동 등록.
+- **실행 로그**:
+    1.  `C:\Users\a\.n8n\nodes\package.json` 생성 및 기본 구조 설정.
+    2.  `xcopy /E /I /Y C:\Users\a\.n8n\node_modules\n8n-nodes-opencode-ai C:\Users\a\.n8n\nodes\node_modules\n8n-nodes-opencode-ai` 실행 (82개 파일 복사).
+    3.  `nodes/package.json`에 종속성 수동 기입: `"n8n-nodes-opencode-ai": "file:node_modules/n8n-nodes-opencode-ai"`
+
+#### [Step 4: n8n 프로세스 재가동 및 최종 검증]
+- **조치**: `n8n start` 프로세스 종료 후 재시작.
+- **검증**:
+    - 워크플로우 캔버스에서 `+` 버튼 클릭.
+    - 검색어 `opencode` 입력 시 `OpenCode`, `OpenCode Tool`, `OpenCode Chat Model` 3종 노드 정상 노출 확인.
+    - 세션 로딩 및 자격 증명(Credentials) 설정 창 정상 작동 확인.
+
+#### [Troubleshooting Insight]
+Windows 환경에서 n8n을 실행할 때, UI를 통한 설치가 실패하는 경우 시스템 PATH 환경변수 수정보다는 n8n 전용 `nodes` 디렉토리에 패키지를 물리적으로 배치하고 `package.json`을 통해 수동 링크를 거는 방식이 가장 확실한 해결책임을 입증함.
 
 ---
 
