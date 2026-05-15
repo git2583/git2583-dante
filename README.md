@@ -48,7 +48,7 @@
 │   ├── market-analysis/        # 한국 커피 시장 분석 데이터
 │   └── presentations/          # 자동 생성된 전략 PPTX 슬라이드
 ├── samples/marketing/          # 마케팅 시나리오 및 초기 브리프
-├── marketing.md                # 800+ 라인 규모의 마케팅 전용 상세 로그
+├── troubleshooting.md          # 850+ 라인 규모의 마케팅 및 시스템 트러블슈팅 로그
 ├── AGENTS.md                   # 프로젝트 운영 지침 및 에이전트 명세
 └── README.md                   # 본 문서 (종합 프로젝트 홈페이지)
 ```
@@ -98,10 +98,10 @@ graph TD
 ## 5. 일자별 상세 작업 로그 (Detailed Work Logs) [UPDATE]
 
 ### 5.1. [최신] Dante Coffee 마케팅 전 페이즈 통합 실행
-- **작업 일시**: 2026-05-15 01:00 ~ 03:00
-- **작업 목표**: 브랜드 전략 수립부터 광고 카피 제작까지의 자동화 완결
+- **작업 일시**: 2026-05-15 01:00 ~ 18:20
+- **작업 목표**: 브랜드 전략 수립부터 n8n 자동화 완결까지의 전 과정
+- **상세 기록**: [troubleshooting.md](file:///c:/Users/a/git2583-dante/troubleshooting.md) 참조
 
-#### [상세 실행 과정 (Execution Logs)]
 ```text
 [01:11] Phase 0 시장 분석 리포트 (310 lines) 생성 완료
 [01:56] Phase 1-2 브랜드 에센스 및 4대 고객 세그먼트 도출

@@ -1,9 +1,9 @@
-# Dante Marketing Automation - 엔터프라이즈 개발 및 전략 보고서 (Full Log)
+# Dante Marketing Automation - 시스템 트러블슈팅 및 종합 개발 보고서 (Full Log)
 
 > **프로젝트**: Dante Marketing Pipeline & Agentic School
 > **최종 업데이트**: 2026-05-15
 > **작성자**: Antigravity (AI Coding Assistant)
-> **문서 성격**: KI 지침서(700+ lines 기준)에 따른 마케팅 자동화 종합 프로세스 리포트
+> **문서 성격**: KI 지침서(850+ lines)에 따른 마케팅 및 n8n 시스템 트러블슈팅 리포트
 
 ---
 
